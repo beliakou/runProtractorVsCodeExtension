@@ -17,10 +17,11 @@ export function activate(context: vscode.ExtensionContext) {
         let terminal: vscode.Terminal = window.terminals.length > 0 ? window.terminals[0] : window.createTerminal();
         terminal.show();
         const protactorConfigPath = getProtractorConfig();
+        const protractorExecutable = getProtractorExecutable();
         const testFile = match.testFile;
         const testName = match.testName;
         terminal.sendText(`cd "${workspace.rootPath}"`);
-        terminal.sendText(`protractor ${protactorConfigPath} --specs='${testFile}' --grep="${testName}"`);  
+        terminal.sendText(`${protractorExecutable} ${protactorConfigPath} --specs='${testFile}' --grep="${testName}"`);
     });
 
     languages.forEach(language => {
@@ -34,6 +35,15 @@ export function activate(context: vscode.ExtensionContext) {
             protactorConfigPath = path.join(workspace.rootPath, config.protractorConfiguration);
         }
         return protactorConfigPath;
+    }
+
+    function getProtractorExecutable() {
+        const config = workspace.getConfiguration('run-protractor');
+        let protactorExecutable = 'npx protractor';
+        if (config.protractorExecutable) {
+            protactorExecutable = config.protractorExecutable;
+        }
+        return protactorExecutable;
     }
 
     function provideCodeLenses(document: vscode.TextDocument, token: vscode.CancellationToken) {
