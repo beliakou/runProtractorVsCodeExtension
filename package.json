@@ -1,58 +1,63 @@
 {
-    "name": "run-protractor",
-    "displayName": "Run protractor",
-    "description": "Starts a single protractor test",
-    "version": "1.0.0",
-    "publisher": "gabduss",
-    "engines": {
-        "vscode": "^1.28.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onLanguage:typescript",
-        "onLanguage:javascript"
-    ],
-    "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "run-protractor",
-            "properties": {
-                "run-protractor.protractorConfiguration": {
-                    "type": "string",
-                    "default": "",
-                    "description": "Relative path to protractor configuration"
-                }
-            }
-        }
-    },
-    "homepage": "https://github.com/gabduss/runProtractorVsCodeExtension",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/gabduss/runProtractorVsCodeExtension.git"
-    },
-    "galleryBanner": {
-        "color": "#E23137",
-        "theme": "dark"
-    },
-    "license": "MIT",
-    "icon": "icon.png",
-    "main": "./out/extension",
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "test": "npm run compile && node ./out/test/index.js"
-    },
-    "devDependencies": {
-        "@types/glob": "^7.1.1",
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^13.7.0",
-        "@types/vscode": "^1.28.0",
-        "glob": "^7.1.6",
-        "mocha": "^6.1.0",
-        "typescript": "^3.7.0",
-        "vscode-test": "^1.3.0"
-    }
+	"name": "run-protractor",
+	"displayName": "Run protractor",
+	"description": "Starts a single protractor test",
+	"version": "1.0.0",
+	"publisher": "gabduss",
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:typescript",
+		"onLanguage:javascript"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "run-protractor",
+			"properties": {
+				"run-protractor.protractorConfiguration": {
+					"type": "string",
+					"default": "",
+					"description": "Relative path to protractor configuration"
+				}
+			}
+		}
+	},
+	"homepage": "https://github.com/gabduss/runProtractorVsCodeExtension",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gabduss/runProtractorVsCodeExtension.git"
+	},
+	"galleryBanner": {
+		"color": "#E23137",
+		"theme": "dark"
+	},
+	"license": "MIT",
+	"icon": "icon.png",
+	"main": "./out/extension",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"test": "npm run compile && node ./out/test/index.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^13.7.0",
+		"@types/vscode": "^1.28.0",
+		"glob": "^7.1.6",
+		"mocha": "^6.1.0",
+		"typescript": "^3.7.0",
+		"vscode-test": "^1.3.0"
+	},
+	"__metadata": {
+		"id": "3a854736-389f-40a2-b31c-9282f6884a3d",
+		"publisherDisplayName": "Gabriel Duss",
+		"publisherId": "0095baee-bf75-4b22-9ecf-24643cb9ff83"
+	}
 }
